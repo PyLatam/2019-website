@@ -50,6 +50,7 @@ INSTALLED_APPS.extend([
     'account',
     'account_extensions',
     'core',
+    'job_ads',
     'sponsors',
 ])
 
