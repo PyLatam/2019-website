@@ -673,11 +673,11 @@ msgstr "Impulsado por"
 
 #: templates/base.html:180
 msgid "Web development by"
-msgstr ""
+msgstr "Desarrollo de web por"
 
 #: templates/base.html:181
 msgid "Homepage UI design"
-msgstr ""
+msgstr "Diseño UI de pagina principal por"
 
 #: templates/cms/plugins/widgets/ckeditor.html:25
 #: templates/cms/plugins/widgets/ckeditor.html:28
