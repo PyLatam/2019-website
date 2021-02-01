@@ -81,17 +81,6 @@
 {% endif %}
 
 <!-- Placeholder user bar -->
-<div class='user_bar'>
-    {% if request.user.is_authenticated %}
-        <a href="{% url 'account_settings' %}">{{ request.user.email }}</a> |
-        <a href="{% url 'account_dashboard' %}">{% trans 'Dashboard' %}</a> |
-        <a href="{% url 'account_logout' %}">{% trans 'Logout' %}</a>
-    {% else %}
-        <a href="{% url 'account_login' %}">{% trans 'Login' %}</a> |
-        <a href="{% url 'account_signup' %}">{% trans 'Sign Up' %}</a>
-    {% endif %}
-</div>
-
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
         {% if not request.current_page.is_home %}
