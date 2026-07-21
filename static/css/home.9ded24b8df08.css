@@ -1,0 +1,314 @@
+body {
+    background-image: url("../img/background2.3d78002848af.jpg");
+    background-size: cover;
+}
+
+h2 {
+  background:
+    url("../img/yellow_asterisc.22b087536d5d.png") right/25px 25px no-repeat,
+    url("../img/yellow_asterisc.22b087536d5d.png") left/25px 25px no-repeat;
+  margin: 0px;
+  font-family: dederon-sans-web, sans-serif; font-weight: 700; font-style: normal;
+  font-size: 45px;
+  color: white;
+  text-shadow: 2px 2px 2px rgb(212, 131, 54);
+  padding: 0px 30px;
+  display: inline;
+}
+
+.nav-link{
+  color:white !important;
+}
+
+.navbar{
+  justify-content: flex-end;
+}
+
+.navbar-toggler{
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.nav-item{
+  text-align:right;
+}
+
+.translation{
+  align-self: flex-end;
+}
+
+.pycon-title {
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 40px;
+    color: rgb(229, 184, 85);
+    text-shadow: 2px 2px 2px rgb(0, 45, 85);
+
+}
+
+#keynote-speakers {
+    background-image: url("../img/Wave3.1276edb0b2d3.svg"), url("../img/Wave2.8ceb73292c1a.svg"), url("../img/Wave1.560805e5c4ea.svg");
+    background-size: cover;
+    background-position: center top;
+    padding: 17% 0 5%;
+    margin-top: -5%;
+    color:white;
+}
+
+#keynote-speakers .carousel-item img{
+  margin:16px;
+  max-width: 200px;
+  max-height: 200px;
+  border:2px white solid;
+}
+
+#keynote-speakers h2::before, #keynote-speakers h2::after{
+  content:none;
+}
+
+#keynote-speakers h4{
+  font-weight:800;
+  letter-spacing: 3px;
+}
+
+#keynote-speakers p{
+  font-size: 1.3em;
+  line-height: 2em;
+  padding:0px 4vw;
+  max-width:800px;
+  margin:0 auto;
+}
+
+#keynote-speakers .carousel-item a{
+  text-decoration: none;
+}
+
+.section-header p{
+    padding: 5% 10%;
+    color: white;
+    font-size: 1.3em;
+    line-height: 2em;
+}
+
+
+
+.sponsors-title {
+    padding: 0 30px 10px 30px;
+    margin: 0px;
+    font-family: 'GT Pressura Bold';
+    font-size: 50px;
+    line-height: 1em;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(56, 114, 159);
+}
+
+#pycon a:first-of-type {
+    color: white;
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    display: block;
+}
+
+.sponsor-text {
+    padding-top: 20px;
+    color: white;
+    font-size: 17px;
+    width: 50%;
+    display: inline-grid;
+}
+
+#pycon .header{
+  max-width: 600px;
+  height: auto;
+}
+
+#mc_embed_signup {
+    padding:5% 0px;
+    background-color: rgb(22, 176, 190);
+}
+
+#mc_embed_signup a {
+  text-decoration: none;
+}
+
+#sponsors {
+    padding: 5% 0;
+    background-color: rgb(212, 131, 54);
+}
+
+/* TODO erase this center class */
+.center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+.left-icon {
+    float: left;
+    height: 100%;
+    padding: 10px 0 10px 0;
+}
+
+.right-icon {
+    float: right;
+    height: 100%;
+    padding: 10px 0 10px 0;
+}
+
+.subscribe-submit-sect {
+    padding-top: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cta-button, .speaker-button{
+  display:block;
+  border: 0px;
+  color: rgba(255,255,255,0.8);
+  border-radius: 4px;
+  padding:1vw 3vw;
+  transition:0.2s;
+  text-transform:uppercase;
+  font-weight:bolder;
+  letter-spacing:2px;
+}
+
+
+.cta-button {
+  font-size:3vw;
+  margin:36px auto;
+  background-color: #E6B520;
+}
+
+.speaker-button {
+  background-color: rgb(22, 176, 190);
+  margin: 16px auto;
+}
+
+.cta-button:hover, .speaker-button:hover{
+  cursor:pointer;
+  border: 0px;
+  outline: none;
+  filter: brightness(110%);
+  transform:scale(1.1);
+}
+
+.cta-button:active, .speaker-button:active{
+  outline:none;
+  border: 0px;
+  transform:scale(1.05);
+}
+
+.cta-button:focus, .speaker-button:focus{
+  border: 0px;
+  outline: none;
+}
+
+@media only screen and (max-width: 800px){
+  .cta-button{
+    font-size:24px;
+    padding:8px 24px;
+  }
+}
+
+
+.sponsor-logos img {
+    padding: 10px;
+}
+
+.sponsor-button {
+    margin-top: 10px;
+    background-color: rgb(48, 175, 189);
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.sponsor-button a:hover, a:active {
+    background-color: rgb(48, 175, 189);;
+}
+
+.divider {
+    display: block;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.scroll-x {
+    text-align: center;
+    width: 100%;
+    height: 34px;
+    font-size: 34px;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    padding-bottom: 30px;
+}
+
+.scroll-down {
+    margin-top: 10px;
+    z-index: 100;
+    width: 100%;
+    height: 34px;
+    font-size: 34px;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    -moz-animation: bounce 4s 2s infinite;
+    -webkit-animation: bounce 4s 2s infinite;
+    animation: bounce 4s 2s infinite;
+}
+
+.scroll-down:hover {
+    color: #fff;
+    -webkit-animation: none;
+    animation: none;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+
+@media only screen and (max-width: 940px) {
+  #pycon .header{
+    max-width: 90%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .section-header p {
+    margin-top: 50px;
+  }
+  #keynote-speakers{
+    padding-top:100px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  h2{
+    padding:0;
+    background:none;
+  }
+
+  .pycon-title {
+      font-size: 2em;
+
+  }
+  h2{
+    font-size:1.8em;
+  }
+}

@@ -1,0 +1,378 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-54898D6');</script>
+        <!-- End Google Tag Manager -->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131160725-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'UA-131160725-1');
+            gtag('config', 'AW-751328710');
+        </script>
+
+        
+    
+    
+    <title>Horario Completo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://2019.pylatam.org/horario-completo/sopita-de-datos-con-espinacas-web-scraping/">
+    <meta property="og:title" content="Horario Completo">
+    <meta property="og:description" content="PyCon Latam 2019">
+    <meta name="description" content="PyCon Latam 2019">
+    <meta property="og:image"
+          content="https://2019.pylatam.org/static/img/pylatamheader.d9dc0b7db8cb.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pylatam">
+    <meta name="twitter:creator" content="@pylatam">
+    
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.f411c136e2bb.css">
+    <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/base.c8e421485ce7.css"/>
+    <link rel="stylesheet" href="https://use.typekit.net/rns7ahv.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/category.549584333710.css"/>
+
+    
+<link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.86311e9c27d2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.d71509349664.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.bc8ca01d4636.png">
+<link rel="manifest" href="/static/img/favicon/site.7f448f965d56.webmanifest">
+<link rel="mask-icon" href="/static/img/favicon/safari-pinned-tab.2732c20261ed.svg" color="#2c8cc8">
+<link rel="shortcut icon" href="/static/img/favicon/favicon.34e595daa646.ico">
+<meta name="msapplication-TileColor" content="#2c8cc8">
+<meta name="msapplication-config" content="/static/img/favicon/browserconfig.1c30c85e4830.xml">
+<meta name="theme-color" content="#2c8cc8">
+
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-54898D6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+
+    
+        
+    
+
+
+<!-- Placeholder user bar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        
+            <a class='navbar-brand' href='/'><img src="/static/img/pylatamheader.c86b316c6a5f.svg"/></a>
+        
+
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarNav" style="">
+            <ul class="navbar-nav navbar-right">
+                
+    
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Acerca de
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                
+                    <a class="dropdown-item" href="/equipo/">Equipo</a>
+                
+                    <a class="dropdown-item" href="/conducta/">Código de Conducta</a>
+                
+                    <a class="dropdown-item" href="/precios/">Precios</a>
+                
+                    <a class="dropdown-item" href="/becas/">Becas</a>
+                
+                    <a class="dropdown-item" href="/voluntarios/">Voluntarios</a>
+                
+            </div>
+        </li>
+    
+
+    
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lugar
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                
+                    <a class="dropdown-item" href="/viajar/">Viajar</a>
+                
+                    <a class="dropdown-item" href="/hotel/">Hotel</a>
+                
+                    <a class="dropdown-item" href="/clima/">Clima</a>
+                
+            </div>
+        </li>
+    
+
+    
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Horario
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                
+                    <a class="dropdown-item" href="/horario-completo/">Horario Completo</a>
+                
+                    <a class="dropdown-item" href="/ponentes-principales/">Ponentes principales</a>
+                
+            </div>
+        </li>
+    
+
+    
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Patrocinios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                
+                    <a class="dropdown-item" href="/patrocinios/nuestros-patrocinadores/">Nuestros patrocinadores</a>
+                
+                    <a class="dropdown-item" href="/patrocinios/informacion/">Ser patrocinador</a>
+                
+            </div>
+        </li>
+    
+
+    
+        <li class="nav-item">
+            <a class="nav-link" href="/exponer/">Exponer</a>
+        </li>
+    
+
+    
+        <li class="nav-item">
+            <a class="nav-link" href="/boletos/">Boletos</a>
+        </li>
+    
+
+    
+        <li class="nav-item">
+            <a class="nav-link" href="/resumen-de-pycon-latam-2019/">Resumen del Evento</a>
+        </li>
+    
+
+
+                <li class="translation"><input id="lang"
+                                               type="checkbox" data-toggle="toggle" data-on="EN" data-off="ES"></li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <!-- {\% import menu tag \%} -->
+</header>
+<main>
+    
+    
+    
+    
+        <main>
+            <section></section>
+            <section>
+                <h1 style="font-size:22pt; margin-bottom: 3vw;">Sopita de datos con espinacas (Web scraping)</h1>
+                <aside>
+                    <h3 style="font-size:17pt;">
+                        <img style="border-radius:50%; height: 150px; margin-top:20px;" src="https://pylatam-live-1a7589a79dec47e09577ffa09-59754f6.aldryn-media.com/filer_public/dd/09/dd09060e-3e8d-4c43-b2e5-880e9cc6a7ef/valerybriz.jpg" class="circle_clip">
+                        <br/>by Valery Calderón
+                        
+                            <br/><a href="http://medium.com/@valerybriz" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                        
+                        
+                            <a href="https://twitter.com/valerybriz" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        
+                    </h3>
+
+                    <p><b>Sala:</b> Concha Nacar
+                        <br/><b>Día:</b> 30 de Agosto de 2019
+                        <br/><b>Hora:</b> 12:00
+                        <br/><b>Idioma:</b> Español
+                    <h4 style="padding:20px;"><a href="#bio">Biografía del ponente</a></h4>
+                </aside>
+                <h2 style="text-align:left; font-size:15pt;">Abstracto</h2>
+                <p><p>En esta charla explicaré las bases del web scraping, para luego profundizar concretamente en las buenas prácticas que deberíamos utilizar al hacer nuestros scripts de scraping, tomando en cuenta la eficiencia de nuestro script y tratando de afectar lo menos posible a nuestra fuente de información.</p>
+</p>
+            </section>
+            <section>
+                <h2>Descripción</h2>
+                <p><p>En estos tiempos los datos tienen un papel muy importante en la industria y la necesidad de obtener estos datos se está volviendo cada vez más grande. 
+Una gran parte de esta información la podemos obtener a través de internet. Algunos de estos datos están expresados por ejemplo, como comentarios o hashtags en redes sociales, otros son textos planos en páginas web y otros más pueden ser tablas en sitios web “antiguos” sin más formato que el de un HTML simple.
+Pero no importando el formato, lo que más nos interesa es la información que podemos obtener de esta fuente, información a la que podremos hacerle análisis y sacar conclusiones o bien aumentar nuestra base de datos para tenerlos disponibles de una forma ordenada y fácil de buscar.
+Algunas veces los mismos sitios nos proveen esa información que tienen almacenada por medio de API’s o poniendo a disposición documentos que podemos descargar fácilmente, pero a veces no hay otra forma de obtenerla más que inspeccionando y copiando esta información directamente desde la página web.</p>
+
+<p>Hasta aquí todo es felicidad, pero qué pasa cuando la información que necesitamos obtener está distribuida en cientos de páginas o rutas distintas y además está desordenada y tiene datos extras que no nos interesan?
+Es entonces cuando la automatización de la inspección y extracción de estos datos entra en juego!.
+En esta charla explicaré en base a la experiencia con un ejemplo real como en nuestro equipo de desarrollo utilizamos técnicas por medio de las cuales es más fácil y eficiente hacer scraping a una página web tomando muy en cuenta que debemos afectar lo menos posible a la página que vamos a inspeccionar.
+Para lograrlo utilizaremos Python 3.x , Beautiful Soup 4 y URLlib3.
+Al finalizar la charla los asistentes tendrán una idea concreta de lo que se trata el scraping y aprenderán tips basados en la experiencia propia que les ayudarán a eficientar y reutilizar sus scripts de scraping.</p>
+
+<h2><strong>Cronograma:</strong></h2>
+
+<p><strong>Acerca de mi: 1 minuto</strong></p>
+
+<ul>
+<li><p>Quien soy.</p></li>
+<li><p>En que trabajo .</p></li>
+<li><p>A qué comunidades pertenezco.</p></li>
+</ul>
+
+<p><strong>Introducción a Scraping: 5 minutos</strong></p>
+
+<ul>
+<li><p>Que significa Web scraping.</p></li>
+<li><p>Que esperamos al momento de ir a una página a buscar información (Está ordenada o desordenada?. La información que busco está etiquetada de una forma en específico? y si no entonces qué debo hacer para poder identificarla).</p></li>
+<li><p>Qué librerías nos ayudan a hacerlo más sencillo.</p></li>
+</ul>
+
+<p><strong>Breve descripción de un HTML: 2 minutos</strong></p>
+
+<ul>
+<li><p>Cuál es la estructura común de un HTML.</p></li>
+<li><p>Que es un DOM.</p></li>
+<li><p>Que es un TAG.</p></li>
+<li><p>Como se ve una tabla.</p></li>
+</ul>
+
+<p><strong>Ejemplo real en aplicación: 15 minutos</strong></p>
+
+<ul>
+<li><p>Para poder explicar de manera más práctica tomaré un ejemplo real de una de las fuentes de información de donde podemos obtener productos con sus detalles. podremos visualizar su robots.txt real y analizarlo, luego explicaré el código que utilicé para obtener los títulos, descripciones, precios e imágenes de los productos de esta página. Tanto en una búsqueda por páginación de todos los elementos como una búsqueda por id’s de los productos. </p></li>
+<li><p>Luego utilizaremos una página distinta para obtener todas las tablas que se encuentran en ella y filtrar columnas según nuestros requerimientos.</p></li>
+</ul>
+
+<p><strong>Qué no debemos hacer: 2 minutos</strong></p>
+
+<ul>
+<li>Mostraré las prácticas comunes de scraping que suelen afectar más de lo necesario a las páginas web de donde vamos a obtener los datos.</li>
+<li>Explicaré la importancia ética de tomar en cuenta el robots.txt.</li>
+<li>Mostraré un ejemplo de cómo escribir un código reutilizable para hacer buscar contenido específicos en una página web.</li>
+</ul>
+
+<p><strong>Breve explicación del repo que compartiré con scripts para scraping: 3 minutos</strong></p>
+
+<ul>
+<li>Mostraré en breve el código que contiene el repositorio y lo que hacen los distintos scripts que básicamente es la base de los conocimientos que di a conocer anteriormente pero aplicados a un código de scraping reutilizable con configuraciones customizables.</li>
+</ul>
+
+<p><strong>Conclusiones:  2 minutos</strong></p>
+
+<ul>
+<li>En conclusión, que no debemos hacer, que si debemos hacer y que es muy importante tener en cuenta al momento de hacer un script de scraping.</li>
+</ul>
+</p>
+            </section>
+            <section id="bio">
+                <aside style="max-width: 100%; width:100%;">
+                <h2>Biografía del ponente</h2>
+                <p><p>Ingeniero de telecomunicaciones, ingeniero de software en @prescrypto, Pythonista, @pythonguatemala Co-fundador, @MxPyladies Co-organizador, Speaker y Geek.</p>
+</p>
+                </aside>
+            </section>
+        </main>
+    
+
+</main>
+
+<footer>
+    <div class='footer__body'>
+        <div class='footer__social-media'>
+            <h3>Manténgase Informado</h3>
+            <ul>
+                <li><a href='https://www.facebook.com/PyLatam/' target="_blank"><i
+                        class="fa fa-facebook color--facebook" aria-hidden="true"></i></a></li>
+                <li><a href='https://twitter.com/PyLatam' target="_blank"><i class="fa fa-twitter color--twitter"
+                                                                             aria-hidden="true"></i></a></li>
+                
+                
+            </ul>
+        </div>
+        <div class='footer__more-info'>
+            <p><strong>Pycon
+                Latam</strong> se compromete a respetar los derechos de todos los individuos, a partir de la tolerancia mutua y la aceptación de los demás sin distinción alguna.
+            </p>
+        </div>
+    </div>
+    <div class='footer__newsletter'>
+      <h3>Newsletter</h3>
+      <form action='https://pylatam.us19.list-manage.com/subscribe/post?u=6d2b6cf4a47f3089e707833e6&amp;id=4db5cc3f9f' method='post' id='mc-embedded-subscribe-form' name='mc-embedded-subscribe-form' class='validate' target='_blank' novalidate>
+          <div id='mc_embed_signup_scroll'>
+              <div id='mce-responses' class='clear'>
+                  <div class='response' id='mce-error-response' style='display:none'></div>
+                  <div class='response' id='mce-success-response' style='display:none'></div>
+              </div>
+              <input type='email' value='' placeholder='dirección de correo electrónico' name='CORREO ELECTRÓNICO' class='required email' id='mce-EMAIL'>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style='position: absolute; left: -5000px;' aria-hidden='true'><input type='text' name='b_6d2b6cf4a47f3089e707833e6_4db5cc3f9f' tabindex='-1' value=''></div>
+              <input class='subscribe-button' type='submit' value='SUSCRIBIRSE'>
+          </div>
+      </form>
+    </div>
+    <div class='footer__nav-bar'>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/hotel/">Hotel</a></li>
+            <li><a href="/exponer/">Exponer</a></li>
+            <li><a href="/conducta/">Código de Conducta</a></li>
+        </ul>
+        <span>&copy;2019 Pycon Latam. Todos los derechos reservados.</span>
+    </div>
+    <div class="built-with">Desarrollado con <a href="https://www.djangoproject.com/" target="_blank">Django</a> &amp; Impulsado por <a href="https://www.divio.com/" target="_blank">Divio</a>
+    <br />Web development by <a href="https://www.linkedin.com/in/garciapat/" target="_blank">Patricio Garcia</a> &amp; <a href="https://codepen.io/TrevorWelch/">Trevor Welch</a>
+    <br />Homepage UI design <a href="https://www.wizeline.com/" target="_blank">Wizeline</a></div>
+
+</footer>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.6895e8cd60b6.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script>
+    $('#lang').change(
+        function () {
+            animationsTest(function () {
+                window.location.replace("/en/full-schedule/sopita-de-datos-con-espinacas-web-scraping/");
+            });
+        });
+
+    function animationsTest(callback) {
+        // Test if ANY/ALL page animations are currently active
+
+        var testAnimationInterval = setInterval(function () {
+            if (!$.timers.length) { // any page animations finished
+                clearInterval(testAnimationInterval);
+                callback();
+            }
+        }, 25);
+    };
+</script>
+
+</body>
+</html>
