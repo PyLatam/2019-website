@@ -26,3 +26,7 @@ Thumbs.db
 
 # VS Code
 .vscode/
+
+# Static site output & local tools
+/dist/
+/manage_conversations.py

@@ -45,7 +45,7 @@ class WebHTMLParser(HTMLParser):
                     self.assets.add(part)
         
         # Meta tags
-        if tag == 'meta' and attrs_dict.get('property') in ('og:image', 'og:url') and 'content' in attrs_dict:
+        if tag == 'meta' and attrs_dict.get('property') in ('og:image',) and 'content' in attrs_dict:
             self.assets.add(attrs_dict['content'])
         if tag == 'meta' and attrs_dict.get('name') in ('twitter:image',) and 'content' in attrs_dict:
             self.assets.add(attrs_dict['content'])
@@ -82,6 +82,14 @@ def should_download_asset(url):
     # Avoid mailto, tel, or fragment links
     if parsed.scheme in ('mailto', 'tel') or url.startswith('#'):
         return False
+        
+    path = parsed.path
+    if not path or path == '/' or path.endswith('/'):
+        return False
+    _, ext = os.path.splitext(path)
+    if not ext:
+        return False
+        
     return True
 
 def clean_url(url, base_url):
@@ -122,6 +130,35 @@ def clean_content_domains(content_bytes):
     text = text.replace('https://pylatam.us.aldryn.io', '')
     
     return text.encode('utf-8')
+
+def make_html_relative(html_text, relative_root):
+    # 1. Match href="/" or src="/" or action="/"
+    pattern_root = re.compile(r'\b(href|src|action)\s*=\s*(["\'])/(["\'])', re.IGNORECASE)
+    html_text = pattern_root.sub(lambda m: f'{m.group(1)}={m.group(2)}{relative_root or "./"}index.html{m.group(3)}', html_text)
+    
+    # 2. Match href="/#something" or src="/#something" or action="/#something"
+    pattern_root_hash = re.compile(r'\b(href|src|action)\s*=\s*(["\'])/#([^"\']*)(["\'])', re.IGNORECASE)
+    html_text = pattern_root_hash.sub(lambda m: f'{m.group(1)}={m.group(2)}{relative_root or "./"}index.html#{m.group(3)}{m.group(4)}', html_text)
+    
+    # 3. Match general absolute paths starting with / (excluding double slashes like //cdn...)
+    pattern = re.compile(r'\b(href|src|srcset|action|data-url|content)\s*=\s*(["\'])/([^/][^"\']*)(["\'])', re.IGNORECASE)
+    
+    def repl(match):
+        attr, quote, path, quote_end = match.groups()
+        new_path = relative_root + path
+        return f'{attr}={quote}{new_path}{quote_end}'
+    
+    html_text = pattern.sub(repl, html_text)
+    
+    # 4. Custom JavaScript replace redirections e.g. window.location.replace("/en/")
+    js_pattern = re.compile(r'window\.location\.replace\(\s*(["\'])/([^/][^"\']*)\1\s*\)', re.IGNORECASE)
+    def js_repl(match):
+        quote, path = match.groups()
+        return f'window.location.replace({quote}{relative_root}{path}{quote})'
+    
+    html_text = js_pattern.sub(js_repl, html_text)
+    
+    return html_text
 
 def scan_css_for_assets(css_bytes, css_url):
     try:
@@ -197,6 +234,23 @@ def main():
             
             # Save local file
             local_path = get_local_path(final_url)
+            
+            # Convert absolute paths to relative paths based on depth
+            try:
+                html_text = cleaned_content.decode('utf-8', errors='ignore')
+                rel_dir = os.path.relpath(DIST_DIR, os.path.dirname(local_path))
+                relative_root = rel_dir.replace('\\', '/')
+                if relative_root == '.':
+                    relative_root = ''
+                else:
+                    if not relative_root.endswith('/'):
+                        relative_root += '/'
+                
+                html_text = make_html_relative(html_text, relative_root)
+                cleaned_content = html_text.encode('utf-8')
+            except Exception as e:
+                print(f"Error converting links to relative: {e}")
+                
             save_file(local_path, cleaned_content)
             print(f"Saved page to: {local_path}")
         else:
@@ -211,7 +265,7 @@ def main():
     download_queue = list(assets_to_download)
     while download_queue:
         asset_url = download_queue.pop(0)
-        if asset_url in downloaded_assets:
+        if asset_url in downloaded_assets or asset_url in crawled_pages:
             continue
             
         print(f"Downloading asset: {asset_url}")
